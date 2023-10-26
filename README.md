@@ -176,6 +176,47 @@ func turnoJugador(color string, wg *sync.WaitGroup, miTurno chan bool, ficha1 ch
 }
 ```
 
+En la función principal, se crea un tablero, después se solicita el número de jugadores y se carga el juego. Luego, se inician goroutines para los turnos de los jugadores. Se utiliza un canal "miTurno" para coordinar cuándo cada jugador puede tomar su turno. La función principal espera a que todos los jugadores terminen su juego y luego imprime los resultados.
+
+```go
+func main() {
+	var wg sync.WaitGroup
+	var tabla [40]int
+
+	fichas := []Ficha{}
+	colors := []string{"red", "green", "blue", "yellow"}
+	positions := []int{0, 0, 0, 0, 39}
+
+	var nPlayers int
+
+	getNumberPlayers(&nPlayers)
+	loadGame(&fichas, &tabla, nPlayers, colors, positions)
+	fmt.Println(tabla)
+
+	miTurno := make(chan bool, 1)
+	chFichas := make([]chan bool, nPlayers*NFICHAS)
+
+	for i := range chFichas {
+		chFichas[i] = make(chan bool)
+	}
+
+	for ind, c := range colors[:nPlayers] {
+		wg.Add(1)
+		go turnoJugador(c, &wg, miTurno, chFichas[ind*NFICHAS], chFichas[ind*NFICHAS+1], chFichas[ind*NFICHAS+2], chFichas[ind*NFICHAS+3], &fichas, tabla)
+	}
+
+	wg.Wait()
+	close(miTurno)
+
+	fmt.Println("!!!JUEGO FINALIZADO TODOS LOS JUGADORES LLEGARON A LA META !!!")
+	for _, v := range fichas {
+		fmt.Println(v)
+	}
+
+}
+```
+
+
 ## Explicación de las pruebas realizadas y pegar las imágenes de evidencia. 
 ![Ejemplo](images/diagrama-estado.png)
 
