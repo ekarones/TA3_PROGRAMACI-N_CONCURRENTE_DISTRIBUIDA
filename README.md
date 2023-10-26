@@ -215,7 +215,10 @@ func main() {
 
 }
 ```
-
+## Uso de Mecanismos de Paralelización y Sincronización:
+- Canales (miTurno, ficha1, ficha2, ficha3, ficha4): Los canales se utilizan para coordinar los turnos y las acciones de los jugadores. En particular, miTurno se utiliza para indicar cuándo un jugador puede tomar su turno, mientras que los canales ficha1, ficha2, ficha3 y ficha4 se utilizan para permitir que sea elegida una ficha para jugar durante el turno. Cuando un jugador quiere tomar su turno, envía un valor al canal miTurno, lo que indica que está listo para jugar. Otros jugadores esperan a que sea su turno, bloqueándose en <-miTurno hasta que el canal se active.
+- Goroutines: El código utiliza goroutines para representar a los jugadores y a las fichas al momento de ser elegidas para jugar. Cada jugador se ejecuta en su propia goroutine y se coordina con los canales para jugar su turno y avanzar sus fichas.
+- Espera de Grupo (sync.WaitGroup): Se crea una espera de grupo (sync.WaitGroup) llamada wg para coordinar la ejecución de las goroutines de los jugadores. Antes de iniciar una goroutine de jugador, se llama a wg.Add(1) para agregar una tarea al grupo, y cuando un jugador ha terminado su turno, se llama a wg.Done() para indicar que la tarea ha sido completada. En la función main, se utiliza wg.Wait() para esperar a que todas las goroutines de los jugadores terminen antes de continuar.
 
 ## Explicación de las pruebas realizadas y pegar las imágenes de evidencia. 
 ![Ejemplo](images/diagrama-estado.png)
