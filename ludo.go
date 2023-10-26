@@ -225,3 +225,42 @@ func turnoJugador(color string, wg *sync.WaitGroup, miTurno chan bool, ficha1 ch
 		}
 	}
 }
+
+func main() {
+	var wg sync.WaitGroup
+	var tabla [40]int
+
+	fichas := []Ficha{}
+	colors := []string{"red", "green", "blue", "yellow"}
+	positions := []int{0, 0, 0, 0, 39}
+
+	var nPlayers int
+
+	getNumberPlayers(&nPlayers)
+	loadGame(&fichas, &tabla, nPlayers, colors, positions)
+	fmt.Println(tabla)
+
+	miTurno := make(chan bool, 1)
+	// suTurno := make(chan bool, 1)
+	// suTurno <- true // Inicialmente, el primer jugador puede avanzar
+	chFichas := make([]chan bool, nPlayers*NFICHAS)
+
+	for i := range chFichas {
+		chFichas[i] = make(chan bool)
+	}
+
+	for ind, c := range colors[:nPlayers] {
+		wg.Add(1)
+		go turnoJugador(c, &wg, miTurno, chFichas[ind*NFICHAS], chFichas[ind*NFICHAS+1], chFichas[ind*NFICHAS+2], chFichas[ind*NFICHAS+3], &fichas, tabla)
+	}
+
+	wg.Wait()
+	close(miTurno)
+	// close(suTurno)
+
+	fmt.Println("!!!JUEGO FINALIZADO TODOS LOS JUGADORES LLEGARON A LA META !!!")
+	for _, v := range fichas {
+		fmt.Println(v)
+	}
+
+}
