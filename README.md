@@ -39,15 +39,83 @@ type Lanzamiento struct {
 
 La función "loadGame" inicializa el juego, colocando obstáculos en el tablero y creando fichas para los jugadores.
 
-![Ejemplo](images/Imagen2.png)
+```go
+func loadGame(fichas *[]Ficha, tabla *[40]int, nPlayers int, colors []string, positions []int) {
+	var contador int
+
+	for contador < MAXOBSTACULOS {
+		number := rand.Intn(40)
+		found := false
+		for _, v := range positions {
+			if number == v {
+				found = true
+				break
+			}
+		}
+		if !found {
+			contador++
+			(*tabla)[number] = -1
+		}
+
+	}
+
+	for i := 0; i < nPlayers; i++ {
+		for j := 0; j < NFICHAS; j++ {
+			ficha := Ficha{
+				id:       j + 1,
+				color:    colors[i],
+				posicion: positions[i],
+				meta:     false,
+			}
+			*fichas = append(*fichas, ficha)
+		}
+	}
+}
+```
 
 La función "lanzarDados" genera un lanzamiento de dados aleatorio y devuelve un objeto de tipo "Lanzamiento".
 
-![Ejemplo](images/Imagen3.png)
+```go
+func lanzarDados() Lanzamiento {
+	valor := rand.Intn(2)
+	tiro := Lanzamiento{
+		dadoA:   rand.Intn(6) + 1,
+		dadoB:   rand.Intn(6) + 1,
+		avanzar: valor == 1,
+	}
+	return tiro
+}
+```
 
 La función "pierdeTurno" verifica si un jugador pierde su turno debido a un obstáculo en el tablero.
 
-![Ejemplo](images/Imagen4.png)
+```go
+func pierdeTurno(tabla [40]int, fichas *[]Ficha, n int) bool {
+
+	for i := 0; i < 4; i++ {
+		for ind, valor := range tabla {
+			if valor == -1 && ind == (*fichas)[i+n].posicion {
+				// fmt.Println("COINCEDENCIA")
+				(*fichas)[i+n].estado += 1
+				if (*fichas)[i+n].estado > 2 {
+					(*fichas)[i+n].estado = 2
+				}
+			}
+			if (*fichas)[i+n].estado == 2 && valor == 0 && ind == (*fichas)[i+n].posicion {
+				(*fichas)[i+n].estado = 0
+			}
+		}
+	}
+	// fmt.Println((*fichas)[n : n+4])
+
+	for i := 0; i < 4; i++ {
+		if (*fichas)[i+n].estado == 1 {
+			return true
+		}
+	}
+	return false
+}
+```
 
 La función "turnoJugador" representa el turno de un jugador. Utiliza canales para coordinar los movimientos de las fichas y realiza cálculos para avanzar las fichas en función de los resultados de los dados. También verifica si un jugador ha llegado a la meta y gana el juego.	
 
