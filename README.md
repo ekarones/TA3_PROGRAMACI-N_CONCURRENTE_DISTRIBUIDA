@@ -22,7 +22,20 @@ La simulación debe mostrar el progreso del juego en tiempo real, lo que signifi
 ## Explicación del código y el uso de los mecanismos de paralelización y sincronización utilizados. 
 Se definen dos estructuras: "Ficha" y "Lanzamiento". La estructura "Ficha" representa las fichas de los jugadores, y "Lanzamiento" representa los resultados de lanzar dos dados. Uno de los datos más importantes es “estado” de la estructura “Ficha” que podemos saber si una ficha se va entrar en una casilla donde hay obstáculo (1) o si ya estuvo en zona obstáculo (2).
 
-![Ejemplo](images/Imagen1.png)
+```go
+type Ficha struct {
+	id       int
+	color    string
+	posicion int
+	estado   int //0 si zona blanca //1 si toco zono obstaculo y recien va perder un turno //si esta en zona obstaculo pero ya perdio un turno
+	meta     bool
+}
+type Lanzamiento struct {
+	dadoA   int
+	dadoB   int
+	avanzar bool
+}
+```
 
 La función "loadGame" inicializa el juego, colocando obstáculos en el tablero y creando fichas para los jugadores.
 
