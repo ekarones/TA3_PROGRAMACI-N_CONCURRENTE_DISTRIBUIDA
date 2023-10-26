@@ -183,4 +183,6 @@ func turnoJugador(color string, wg *sync.WaitGroup, miTurno chan bool, ficha1 ch
 [https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/tree/main](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/tree/main)
 
 ## Enlace de vídeo presentando el funcionamiento de la aplicación 
+[https://youtu.be/msRSt75hk3I](https://youtu.be/msRSt75hk3I)
+
 
