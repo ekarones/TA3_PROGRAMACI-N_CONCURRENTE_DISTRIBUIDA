@@ -25,4 +25,9 @@ Se definen dos estructuras: "Ficha" y "Lanzamiento". La estructura "Ficha" repre
 ## Explicación de las pruebas realizadas y pegar las imágenes de evidencia. 
 ![Ejemplo](images/diagrama-estado.png)
 
+## Enlace de github donde subió su código fuente y se pueda descargar 
+https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/tree/main
+
+## Enlace de vídeo presentando el funcionamiento de la aplicación 
+[https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/tree/main](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/tree/main)
 
