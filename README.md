@@ -24,6 +24,11 @@ Se definen dos estructuras: "Ficha" y "Lanzamiento". La estructura "Ficha" repre
 
 ![Ejemplo](images/Imagen1.png)
 
+La función "loadGame" inicializa el juego, colocando obstáculos en el tablero y creando fichas para los jugadores.
+
+![Ejemplo](images/Imagen2.png)
+
+
 ## Explicación de las pruebas realizadas y pegar las imágenes de evidencia. 
 ![Ejemplo](images/diagrama-estado.png)
 
