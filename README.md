@@ -289,7 +289,7 @@ func main() {
 - Goroutines: El código utiliza goroutines para representar a los jugadores y a las fichas al momento de ser elegidas para jugar. Cada jugador se ejecuta en su propia goroutine y se coordina con los canales para jugar su turno y avanzar sus fichas.
 - Espera de Grupo (sync.WaitGroup): Se crea una espera de grupo (sync.WaitGroup) llamada wg para coordinar la ejecución de las goroutines de los jugadores. Antes de iniciar una goroutine de jugador, se llama a wg.Add(1) para agregar una tarea al grupo, y cuando un jugador ha terminado su turno, se llama a wg.Done() para indicar que la tarea ha sido completada. En la función main, se utiliza wg.Wait() para esperar a que todas las goroutines de los jugadores terminen antes de continuar.
 
-## Explicación de las pruebas realizadas y pegar las imágenes de evidencia. 
+## Diagrama 
 
 ![Ejemplo](images/diagrama-estado.png)
 
