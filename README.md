@@ -95,7 +95,6 @@ func pierdeTurno(tabla [40]int, fichas *[]Ficha, n int) bool {
 	for i := 0; i < 4; i++ {
 		for ind, valor := range tabla {
 			if valor == -1 && ind == (*fichas)[i+n].posicion {
-				// fmt.Println("COINCEDENCIA")
 				(*fichas)[i+n].estado += 1
 				if (*fichas)[i+n].estado > 2 {
 					(*fichas)[i+n].estado = 2
@@ -106,7 +105,6 @@ func pierdeTurno(tabla [40]int, fichas *[]Ficha, n int) bool {
 			}
 		}
 	}
-	// fmt.Println((*fichas)[n : n+4])
 
 	for i := 0; i < 4; i++ {
 		if (*fichas)[i+n].estado == 1 {
