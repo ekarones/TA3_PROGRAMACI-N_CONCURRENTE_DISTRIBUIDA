@@ -27,7 +27,7 @@ type Ficha struct {
 	id       int
 	color    string
 	posicion int
-	estado   int //0 si zona blanca //1 si toco zono obstaculo y recien va perder un turno //2 si esta en zona obstaculo pero ya perdio un turno
+	estado   int
 	meta     bool
 }
 type Lanzamiento struct {
