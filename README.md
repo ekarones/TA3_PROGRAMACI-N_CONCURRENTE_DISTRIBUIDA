@@ -297,7 +297,7 @@ func main() {
 	
 En la primera parte seleccionamos la cantidad de jugadores para el ludo y la creación de un mapa usando un array. Los valores que tengan -1 representan los obstáculos.
 
-![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/66271146/3c1d4843-d21a-4462-95b0-7081c4488b55)
+![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/66271146/48ba54b1-2a27-4040-8cfc-8d3b39354a5f)
 
 En cada ronda del juego, los jugadores participan y utilizan una estructura "select" para elegir cuál de sus fichas van a mover durante su turno. En cada turno individual, el programa muestra en la consola información importante, incluyendo el color del jugador, la ficha seleccionada para el turno, el resultado del lanzamiento de dados y la posición actual de esa ficha después de realizar el movimiento.
 
