@@ -295,7 +295,11 @@ func main() {
 
 ## Explicación de las pruebas realizadas y pegar las imágenes de evidencia. 
 	
-En la primera parte seleccionamos la cantidad de jugadores para el ludo y la creación de un mapa usando un array. Los valores que tengan -1 representan los obstáculos.  
+En la primera parte seleccionamos la cantidad de jugadores para el ludo y la creación de un mapa usando un array. Los valores que tengan -1 representan los obstáculos.
+
+![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/66271146/3c1d4843-d21a-4462-95b0-7081c4488b55)
+
+![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/66271146/071b74d5-d7c2-4ed8-8599-f6a74e89f0d1)
 
 ## Enlace de github donde subió su código fuente y se pueda descargar 
 
