@@ -303,6 +303,19 @@ En cada ronda del juego, los jugadores participan y utilizan una estructura "sel
 
 ![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/66271146/a0c927b9-2a42-488c-b42a-6b7e81264470)
 
+En esta situación, el jugador "green" obtuvo un lanzamiento de -3, lo que lo llevó a la casilla de la posición 3. Sin embargo, esta casilla se encuentra designada como un obstáculo en el mapa del juego. Como resultado, en la próxima ronda, el jugador "green" no podrá jugar.
+
+![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/89090023/a68d798f-678f-4d0c-a793-27d505f4f2d0)
+
+![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/89090023/d2b7b76a-8d58-41a8-9517-e2c1aa0c2189)
+
+Cuando un jugador logra que todas las fichas lleguen a la meta, se imprime un mensaje de victoria. A partir de ese momento, en la siguiente ronda, ese jugador ya no participa en el juego y espera hasta que todos los jugadores hayan alcanzado la victoria.
+
+![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/89090023/c9c20f34-4aeb-4a93-ae7e-476eadc4eb6b)
+
+Finalmente, el juego acaba cuando todas las fichas hayan llegado a la meta y se imprime el siguiente mensaje:
+
+![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/89090023/4fef498e-4a84-4efa-a14c-9319b4d8d4f1)
 
 ## Enlace de github donde subió su código fuente y se pueda descargar 
 
