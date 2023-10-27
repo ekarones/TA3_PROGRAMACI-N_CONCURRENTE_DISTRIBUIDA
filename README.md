@@ -299,7 +299,10 @@ En la primera parte seleccionamos la cantidad de jugadores para el ludo y la cre
 
 ![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/66271146/3c1d4843-d21a-4462-95b0-7081c4488b55)
 
-![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/66271146/071b74d5-d7c2-4ed8-8599-f6a74e89f0d1)
+En cada ronda del juego, los jugadores participan y utilizan una estructura "select" para elegir cuál de sus fichas van a mover durante su turno. En cada turno individual, el programa muestra en la consola información importante, incluyendo el color del jugador, la ficha seleccionada para el turno, el resultado del lanzamiento de dados y la posición actual de esa ficha después de realizar el movimiento.
+
+![image](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/66271146/a0c927b9-2a42-488c-b42a-6b7e81264470)
+
 
 ## Enlace de github donde subió su código fuente y se pueda descargar 
 
