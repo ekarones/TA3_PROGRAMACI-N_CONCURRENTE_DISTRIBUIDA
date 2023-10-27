@@ -291,7 +291,7 @@ func main() {
 
 ## Diagrama 
 
-![Ejemplo](images/diagrama-estado.png)
+![Ejemplo](https://github.com/ekarones/TA3_PROGRAMACION_CONCURRENTE_DISTRIBUIDA/assets/74325197/e1f53c5e-f091-4e55-8a68-f331a158fdc7)
 
 ## Explicación de las pruebas realizadas y pegar las imágenes de evidencia. 
 	
